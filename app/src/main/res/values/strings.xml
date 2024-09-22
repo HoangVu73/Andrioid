@@ -1,0 +1,17 @@
+<resources>
+    <!-- Mô tả logo -->
+    <string name="logo_description">Logo của ứng dụng</string>
+
+    <!-- Mô tả cho các hình ảnh của các phần quản lý -->
+    <string name="logo_description_employee">Quản lý nhân sự</string>
+    <string name="logo_description_department">Quản lý phòng ban</string>
+    <string name="logo_description_position">Quản lý chức vụ</string>
+    <string name="logo_description_evaluation">Đánh giá nhân viên</string>
+
+    <!-- Các chuỗi khác trong ứng dụng -->
+    <string name="app_name">Tên Ứng Dụng</string>
+    <string name="welcome_message">Chào Mừng Admin</string>
+    <!-- Thêm các chuỗi khác ở đây -->
+    <string name="logo_description_logout">Biểu tượng đăng xuất</string>
+    <string name="back_button">Quay lại</string>
+</resources>

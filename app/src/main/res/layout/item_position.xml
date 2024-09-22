@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+    <!-- Tên chức vụ -->
+    <TextView
+        android:id="@+id/txt_position_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Tên chức vụ"
+        android:textSize="18sp" />
+
+    <!-- Nút Sửa, ban đầu ẩn -->
+    <Button
+        android:id="@+id/btn_edit_position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sửa"
+        android:visibility="gone" />
+
+    <!-- Nút Xóa, ban đầu ẩn -->
+    <Button
+        android:id="@+id/btn_delete_position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Xóa"
+        android:visibility="gone" />
+
+</LinearLayout>

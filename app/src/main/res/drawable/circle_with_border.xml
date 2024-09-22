@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Viền ngoài của hình tròn -->
+    <stroke
+        android:width="4dp"
+    android:color="#000000"/>
+
+    <!-- Màu nền của hình tròn -->
+    <solid android:color="#FFFFFF"/>
+
+    <!-- Tạo hình tròn bằng cách đặt bán kính góc -->
+    <corners android:radius="100dp"/>
+</shape>

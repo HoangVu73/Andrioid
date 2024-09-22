@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".crud.EditEmployeeActivity">
+
+    <!-- Back Icon and Title -->
+    <ImageView
+        android:id="@+id/ic_back"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="Back" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sửa Thông Tin Nhân Viên"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/ic_back"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/ic_back"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintVertical_bias="0" />
+
+    <!-- Employee ID Input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_employee_id"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_employee_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Mã nhân viên"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- First Name Input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_first_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/input_employee_id">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_first_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Họ"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Last Name Input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_last_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/input_first_name">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_last_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tên"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Department Selection Button -->
+    <Button
+        android:id="@+id/btn_select_department"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Chọn Phòng Ban"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/input_last_name" />
+
+    <!-- Position Selection Button -->
+    <Button
+        android:id="@+id/btn_select_position"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Chọn Chức Vụ"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_select_department" />
+
+    <!-- Hire Date Selection Button -->
+    <Button
+        android:id="@+id/btn_hire_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Chọn Ngày Tuyển Dụng"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_select_position" />
+
+    <!-- Image Preview -->
+    <ImageView
+        android:id="@+id/iv_image"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="Hình ảnh nhân viên"
+        android:scaleType="centerCrop"
+        android:background="#dddddd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_hire_date" />
+
+    <!-- Image Selection Button -->
+    <Button
+        android:id="@+id/btn_choose_image"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Chọn Ảnh"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_image" />
+
+    <!-- Save Button -->
+    <Button
+        android:id="@+id/btn_save_employee"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Lưu"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_choose_image" />
+</androidx.constraintlayout.widget.ConstraintLayout>

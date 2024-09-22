@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Quyền sử dụng Internet -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+
+    <!-- Tính năng yêu cầu -->
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.QuanLyNhanSu"
+        tools:targetApi="31">
+
+        <!-- Khai báo MainActivity -->
+        <activity
+            android:name=".Activity.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Khai báo HomeActivity -->
+        <activity
+            android:name=".Activity.HomeActivity"
+            android:exported="true" />
+
+        <!-- Khai báo EmployeesActivity -->
+        <activity
+            android:name=".Activity.EmployeesActivity"
+            android:exported="true" />
+
+        <!-- Khai báo AddEmployeeActivity -->
+        <activity
+            android:name=".crud.AddEmployeeActivity"
+            android:exported="true" />
+
+        <!-- Khai báo EditEmployeeActivity -->
+        <activity
+            android:name=".crud.EditEmployeeActivity"
+            android:exported="true" />
+
+        <!-- Khai báo PositionActivity -->
+        <activity
+            android:name=".Activity.PositionActivity"
+            android:exported="true" />
+
+        <!-- Khai báo AddPositionActivity -->
+        <activity
+            android:name=".crud.AddPositionActivity"
+            android:exported="true" />
+
+        <!-- Khai báo EditPositionActivity -->
+        <activity
+            android:name=".crud.EditPositionActivity"
+            android:exported="true" />
+
+        <!-- Khai báo DepartmentsActivity -->
+        <activity
+            android:name=".Activity.DepartmentsActivity"
+            android:exported="true" />
+
+        <!-- Khai báo AddDepartmentActivity -->
+        <activity
+            android:name=".crud.AddDepartmentActivity"
+            android:exported="true" />
+
+        <!-- Khai báo EditDepartmentActivity -->
+        <activity
+            android:name=".crud.EditDepartmentActivity"
+            android:exported="true" />
+
+    </application>
+
+</manifest>

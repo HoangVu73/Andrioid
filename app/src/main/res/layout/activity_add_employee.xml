@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Nút Quay lại (ic_back) -->
+    <ImageView
+        android:id="@+id/ic_back"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_back"
+        android:contentDescription="Quay lại"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="8dp" />
+
+    <!-- Tiêu đề "Thêm Nhân Viên" -->
+    <TextView
+        android:id="@+id/txt_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Thêm Nhân Viên"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintStart_toEndOf="@id/ic_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Form thêm thông tin nhân viên -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edt_employee_code_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_title">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_employee_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Mã Nhân Viên"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edt_first_name_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edt_employee_code_layout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_first_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Họ" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edt_last_name_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edt_first_name_layout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_last_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tên" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Button chọn Phòng Ban -->
+    <Button
+        android:id="@+id/btn_select_department"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Chọn Phòng Ban"
+        android:padding="12dp"
+        android:minHeight="48dp"
+        android:background="@drawable/button_border"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edt_last_name_layout"
+        android:layout_marginTop="16dp" />
+
+    <!-- Button chọn Chức Vụ -->
+    <Button
+        android:id="@+id/btn_select_position"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Chọn Chức Vụ"
+        android:padding="12dp"
+        android:minHeight="48dp"
+        android:background="@drawable/button_border"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_select_department"
+        android:layout_marginTop="16dp" />
+
+    <!-- ImageView để hiển thị ảnh nhân viên -->
+    <ImageView
+        android:id="@+id/iv_image"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="Hình ảnh nhân viên"
+        android:scaleType="centerCrop"
+        android:background="#dddddd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_select_position" />
+
+    <!-- Button để chọn ảnh -->
+    <Button
+        android:id="@+id/btn_choose_image"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Chọn Ảnh"
+        android:padding="12dp"
+        android:minHeight="48dp"
+        android:backgroundTint="@color/colorAccent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_hire_date"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_image"
+        android:layout_marginTop="16dp" />
+
+    <!-- Button để chọn ngày tuyển dụng -->
+    <Button
+        android:id="@+id/btn_hire_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Ngày tuyển dụng "
+        android:padding="12dp"
+        android:minHeight="48dp"
+        android:backgroundTint="@color/colorAccent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_choose_image"
+        app:layout_constraintTop_toBottomOf="@id/iv_image"
+        android:layout_marginTop="16dp" />
+
+    <!-- Nút Lưu thông tin nhân viên -->
+    <Button
+        android:id="@+id/btn_save_employee"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Lưu"
+        android:padding="12dp"
+        android:minHeight="48dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_hire_date"
+        android:layout_marginTop="16dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

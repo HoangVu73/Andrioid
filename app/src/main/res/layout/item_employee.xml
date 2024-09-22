@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+    <ImageView
+        android:id="@+id/img_employee"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:contentDescription="Hình Ảnh Nhân Viên"
+        android:src="@drawable/ic_default_avatar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.094" />
+
+    <TextView
+        android:id="@+id/txt_employee_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mã Nhân Viên: "
+        app:layout_constraintStart_toEndOf="@id/img_employee"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_employee_id_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/txt_employee_id"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/txt_employee_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tên Nhân Viên: "
+        app:layout_constraintStart_toEndOf="@id/img_employee"
+        app:layout_constraintTop_toBottomOf="@id/txt_employee_id" />
+
+    <TextView
+        android:id="@+id/txt_employee_name_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/txt_employee_name"
+        app:layout_constraintTop_toBottomOf="@id/txt_employee_id"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/txt_employee_position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chức Vụ: "
+        app:layout_constraintStart_toEndOf="@id/img_employee"
+        app:layout_constraintTop_toBottomOf="@id/txt_employee_name" />
+
+    <TextView
+        android:id="@+id/txt_employee_position_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/txt_employee_position"
+        app:layout_constraintTop_toBottomOf="@id/txt_employee_name"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/txt_department"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Phòng Ban: "
+        app:layout_constraintStart_toEndOf="@id/img_employee"
+        app:layout_constraintTop_toBottomOf="@id/txt_employee_position" />
+
+    <TextView
+        android:id="@+id/txt_department_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/txt_department"
+        app:layout_constraintTop_toBottomOf="@id/txt_employee_position"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/txt_hire_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ngày Tuyển Dụng: "
+        app:layout_constraintStart_toEndOf="@id/img_employee"
+        app:layout_constraintTop_toBottomOf="@id/txt_department" />
+
+    <TextView
+        android:id="@+id/txt_hire_date_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/txt_hire_date"
+        app:layout_constraintTop_toBottomOf="@id/txt_department"
+        android:text="" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_hire_date">
+
+        <Button
+            android:id="@+id/btn_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sửa"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@id/btn_delete"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Xóa"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@id/btn_evaluate"
+            app:layout_constraintStart_toEndOf="@id/btn_edit"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_evaluate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đánh Giá"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn_delete" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
