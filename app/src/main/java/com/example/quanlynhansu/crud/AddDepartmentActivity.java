@@ -5,6 +5,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.quanlynhansu.Items.Departments;
@@ -30,6 +31,9 @@ public class AddDepartmentActivity extends AppCompatActivity {
         databaseDepartments = FirebaseDatabase.getInstance().getReference("Departments");
 
         btnSaveDepartment.setOnClickListener(v -> addDepartment());
+
+        ImageView btnBack = findViewById(R.id.ic_back);
+        btnBack.setOnClickListener(v -> finish());
     }
 
     private void addDepartment() {

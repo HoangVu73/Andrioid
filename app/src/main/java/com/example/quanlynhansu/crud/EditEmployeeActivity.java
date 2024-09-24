@@ -72,6 +72,9 @@ public class EditEmployeeActivity extends AppCompatActivity {
 
         // Xử lý lưu thông tin nhân viên
         btnSaveEmployee.setOnClickListener(v -> saveEmployeeData());
+
+        ImageView btnBack = findViewById(R.id.ic_back);
+        btnBack.setOnClickListener(v -> finish());
     }
 
     // Mở bộ chọn hình ảnh

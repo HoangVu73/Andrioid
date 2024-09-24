@@ -20,6 +20,9 @@
         android:contentDescription="@string/logo_description" />
 
     <!-- Welcome Text -->
+
+    <!-- Username EditText -->
+
     <TextView
         android:id="@+id/welcomeText"
         android:layout_width="wrap_content"
@@ -27,12 +30,10 @@
         android:text="Chào Mừng Bạn Đến Với Công Ty"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/usernameEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo" />
 
-    <!-- Username EditText -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/usernameInputLayout"
         android:layout_width="0dp"
@@ -77,6 +78,8 @@
         android:id="@+id/loginButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         android:text="Đăng nhập"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

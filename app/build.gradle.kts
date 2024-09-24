@@ -41,7 +41,8 @@ dependencies {
     implementation(libs.firebase.database)
 
     // Thêm Glide
-    implementation(libs.glide) // Thư viện Glide
+    implementation(libs.glide)
+    implementation(libs.litert.metadata) // Thư viện Glide
     annotationProcessor(libs.glide.compiler) // Compiler của Glide cho annotation processing
 
     // Thêm Picasso

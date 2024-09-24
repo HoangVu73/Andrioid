@@ -64,6 +64,9 @@ public class DepartmentsActivity extends AppCompatActivity {
             }
         });
 
+        ImageView btnBack = findViewById(R.id.ic_back);
+        btnBack.setOnClickListener(v -> finish());
+
         // Xử lý sự kiện nhấn nút thêm phòng ban
         btnAddDepartment.setOnClickListener(v -> {
             Intent intent = new Intent(DepartmentsActivity.this, AddDepartmentActivity.class);

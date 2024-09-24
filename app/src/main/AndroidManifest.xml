@@ -87,6 +87,22 @@
             android:name=".crud.EditDepartmentActivity"
             android:exported="true" />
 
+        <!-- Khai báo SalaryActivity -->
+        <activity
+            android:name=".Activity.SalaryActivity"
+            android:exported="true" />
+
+        <!-- Khai báo AddSalaryActivity -->
+        <activity
+            android:name=".crud.AddSalaryActivity"
+            android:exported="true" />
+
+        <!-- Khai báo EditSalaryActivity -->
+<!--        <activity-->
+<!--            android:name=".crud.EditSalaryActivity"-->
+<!--            android:exported="true" />-->
+
+
     </application>
 
 </manifest>

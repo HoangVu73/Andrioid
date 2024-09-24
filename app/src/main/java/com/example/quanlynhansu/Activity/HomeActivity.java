@@ -23,6 +23,9 @@ public class HomeActivity extends AppCompatActivity {
         // Tìm layout Quản Lý Phòng Ban
         LinearLayout layoutDepartmentManagement = findViewById(R.id.layout_department);
 
+        // Tìm layout Quản Lý Tiền lương
+        LinearLayout layoutSalaryManagement = findViewById(R.id.layout_salary);
+
         // Tìm nút đăng xuất
         LinearLayout layoutLogout = findViewById(R.id.layout_logout);
 
@@ -49,6 +52,14 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HomeActivity.this, DepartmentsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        layoutSalaryManagement.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this, SalaryActivity.class);
                 startActivity(intent);
             }
         });

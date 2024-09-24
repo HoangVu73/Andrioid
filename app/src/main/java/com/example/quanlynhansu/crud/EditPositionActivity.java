@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -29,6 +30,9 @@ public class EditPositionActivity extends AppCompatActivity {
         etPositionId = findViewById(R.id.et_position_id);
         etPositionName = findViewById(R.id.et_position_name);
         btnSavePosition = findViewById(R.id.btn_save_position);
+
+        ImageView btnBack = findViewById(R.id.ic_back);
+        btnBack.setOnClickListener(v -> finish());
 
         // Lấy dữ liệu từ Intent
         positionId = getIntent().getStringExtra("position_id");

@@ -3,6 +3,7 @@ package com.example.quanlynhansu.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -64,6 +65,9 @@ public class PositionActivity extends AppCompatActivity {
                 // Xử lý lỗi nếu có
             }
         });
+
+        ImageView btnBack = findViewById(R.id.ic_back);
+        btnBack.setOnClickListener(v -> finish());
 
         // Mở Activity thêm chức vụ
         btnAddPosition.setOnClickListener(v -> {

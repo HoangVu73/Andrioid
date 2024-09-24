@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <Spinner
+        android:id="@+id/spinnerEmployee"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Chọn Nhân Viên"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/edtBasicSalary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Lương cơ bản"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/edtAllowance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Trợ cấp"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/edtTax"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Thuế"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/edtInsurance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Bảo hiểm"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/btnAddSalary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tính lương" />
+</LinearLayout>

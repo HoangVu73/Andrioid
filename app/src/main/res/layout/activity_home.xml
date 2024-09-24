@@ -136,7 +136,7 @@
 
         <!-- Đánh giá nhân viên -->
         <LinearLayout
-            android:id="@+id/layout_evaluation"
+            android:id="@+id/layout_salary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -155,7 +155,7 @@
                 android:id="@+id/txt_evaluation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Đánh Giá Nhân Viên"
+                android:text="Quản lý tiền lương"
                 android:textSize="18sp"
                 android:textStyle="bold"/>
         </LinearLayout>

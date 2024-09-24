@@ -12,6 +12,7 @@ firebaseDatabase = "21.0.0"
 glide = "5.0.0-rc01"
 picasso = "2.8"
 emoji = "0.21.0"
+litertMetadata = "1.0.1"
 
 [libraries]
 junit = { group = "org.eclipse.jdt", name = "junit", version.ref = "junit" }
@@ -26,6 +27,7 @@ glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "gl
 glide-compiler = { group = "com.github.bumptech.glide", name = "compiler", version.ref = "glide" }
 picasso = { group = "com.squareup.picasso", name = "picasso", version.ref = "picasso" }
 emoji-androidx-emoji2 = { group = "com.vanniktech", name = "emoji-androidx-emoji2", version.ref = "emoji" }
+litert-metadata = { group = "com.google.ai.edge.litert", name = "litert-metadata", version.ref = "litertMetadata" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
