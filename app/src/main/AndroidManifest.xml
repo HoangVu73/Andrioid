@@ -97,10 +97,9 @@
             android:name=".crud.AddSalaryActivity"
             android:exported="true" />
 
-        <!-- Khai báo EditSalaryActivity -->
-<!--        <activity-->
-<!--            android:name=".crud.EditSalaryActivity"-->
-<!--            android:exported="true" />-->
+        <activity
+            android:name=".crud.EditSalaryActivity"
+            android:exported="true" />
 
 
     </application>

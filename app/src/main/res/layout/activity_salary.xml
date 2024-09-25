@@ -31,22 +31,26 @@
         android:gravity="center"/>
 
     <!-- Danh sách nhân viên từ Firebase -->
+
+    <!-- Nút Thêm nhân viên -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewSalaries"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/txt_title"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/btn_add_salary"
         android:layout_marginTop="16dp"
-        android:padding="16dp"/>
+        android:padding="16dp"
+        app:layout_constraintBottom_toTopOf="@id/btn_add_salary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_title"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_goneMarginTop="50dp" />
 
-    <!-- Nút Thêm nhân viên -->
     <Button
         android:id="@+id/btn_add_salary"
         android:layout_width="195dp"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:text="Thêm mới"

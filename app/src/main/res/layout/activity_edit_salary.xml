@@ -1,0 +1,58 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/ic_back"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_back"
+        android:contentDescription="Quay lại"
+        android:layout_marginEnd="8dp" />
+
+    <EditText
+        android:id="@+id/etBasicSalary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Lương cơ bản"
+        android:minHeight="48dp"
+        android:layout_marginTop="30dp"/>
+
+    <EditText
+        android:id="@+id/etAllowance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Trợ cấp"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/etTax"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Thuế"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/etInsurance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Bảo hiểm"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/etSalary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:hint="Calculated Salary"
+        android:minHeight="48dp" /> <!-- Chỉ đọc -->
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save" />
+
+</LinearLayout>

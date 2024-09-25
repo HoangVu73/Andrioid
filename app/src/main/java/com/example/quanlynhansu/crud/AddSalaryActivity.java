@@ -8,6 +8,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -34,11 +35,15 @@ public class AddSalaryActivity extends AppCompatActivity {
     private DatabaseReference salaryDatabase;
     private DatabaseReference employeeDatabase; // Database reference for employees
     private List<String> employeeNames; // List to store employee names
+    private List<String> employeeIDs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_salary);
+
+        ImageView btnBack = findViewById(R.id.ic_back);
+        btnBack.setOnClickListener(v -> finish());
 
         spinnerEmployee = findViewById(R.id.spinnerEmployee);
         edtBasicSalary = findViewById(R.id.edtBasicSalary);
@@ -53,19 +58,12 @@ public class AddSalaryActivity extends AppCompatActivity {
 
         // Initialize employee names list
         employeeNames = new ArrayList<>();
+        employeeIDs = new ArrayList<>();
 
         // Load employee data into spinner
         loadEmployeeData();
+        loadSalaryData();
 
-        spinnerEmployee.setOnTouchListener((v, event) -> {
-            if (event.getAction() == MotionEvent.ACTION_UP) {
-                InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-                if (imm != null) {
-                    imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
-                }
-            }
-            return false;
-        });
 
         btnAddSalary.setOnClickListener(v -> addSalary());
     }
@@ -74,7 +72,8 @@ public class AddSalaryActivity extends AppCompatActivity {
         employeeDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                employeeNames.clear(); // Clear the list before adding new data
+                employeeNames.clear();
+                employeeIDs.clear();
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     String id = snapshot.child("id").getValue(String.class);
                     String firstName = snapshot.child("firstName").getValue(String.class);
@@ -83,6 +82,7 @@ public class AddSalaryActivity extends AppCompatActivity {
                     if (firstName != null && lastName != null) {
                         String fullName = firstName + " " + lastName;
                         employeeNames.add(fullName);
+                        employeeIDs.add(id);
                     }
                 }
 
@@ -108,6 +108,9 @@ public class AddSalaryActivity extends AppCompatActivity {
 
 
     private void addSalary() {
+        int selectedPosition = spinnerEmployee.getSelectedItemPosition();
+        String employeeId = employeeIDs.get(selectedPosition);
+
         String employeeName = spinnerEmployee.getSelectedItem().toString();
         String basicSalaryStr = edtBasicSalary.getText().toString().trim();
         String allowanceStr = edtAllowance.getText().toString().trim();
@@ -130,7 +133,10 @@ public class AddSalaryActivity extends AppCompatActivity {
 
         // Tạo đối tượng SalaryItem và lưu vào Firebase
         String salaryId = salaryDatabase.push().getKey();
-        SalaryItems salaryItem = new SalaryItems(salaryId, employeeName, basicSalary, allowance, tax, insurance, String.valueOf(netSalary));
+        // Tạo đối tượng SalaryItem và lưu vào Firebase
+        SalaryItems salaryItem = new SalaryItems(salaryId, employeeId, employeeName, basicSalary, allowance, tax, insurance, String.valueOf(netSalary));
+
+
 
         if (salaryId != null) {
             salaryDatabase.child(salaryId).setValue(salaryItem).addOnCompleteListener(task -> {

@@ -1,7 +1,11 @@
 package com.example.quanlynhansu.Items;
 
-public class SalaryItems {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class SalaryItems implements Parcelable {
     private String id;
+    private String employeeId;
     private String name;
     private double basicSalary;
     private double allowance;
@@ -9,9 +13,14 @@ public class SalaryItems {
     private double insurance;
     private String salary; // Lương thực tính, dưới dạng chuỗi đã định dạng
 
-    // Constructor
-    public SalaryItems(String id, String name, double basicSalary, double allowance, double tax, double insurance, String salary) {
+    // Constructor mặc định
+    public SalaryItems() {
+    }
+
+    // Constructor với tham số
+    public SalaryItems(String id, String employeeId, String name, double basicSalary, double allowance, double tax, double insurance, String salary) {
         this.id = id;
+        this.employeeId = employeeId;
         this.name = name;
         this.basicSalary = basicSalary;
         this.allowance = allowance;
@@ -20,14 +29,21 @@ public class SalaryItems {
         this.salary = salary;
     }
 
-    // Getters and Setters for all fields
-
+    // Getters and Setters
     public String getId() {
         return id;
     }
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getEmployeeId() {
+        return employeeId;
+    }
+
+    public void setEmployeeId(String employeeId) {
+        this.employeeId = employeeId;
     }
 
     public String getName() {
@@ -77,5 +93,45 @@ public class SalaryItems {
     public void setSalary(String salary) {
         this.salary = salary;
     }
-}
 
+    // Implement Parcelable
+    protected SalaryItems(Parcel in) {
+        id = in.readString();
+        employeeId = in.readString();
+        name = in.readString();
+        basicSalary = in.readDouble();
+        allowance = in.readDouble();
+        tax = in.readDouble();
+        insurance = in.readDouble();
+        salary = in.readString();
+    }
+
+    public static final Creator<SalaryItems> CREATOR = new Creator<SalaryItems>() {
+        @Override
+        public SalaryItems createFromParcel(Parcel in) {
+            return new SalaryItems(in);
+        }
+
+        @Override
+        public SalaryItems[] newArray(int size) {
+            return new SalaryItems[size];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(id);
+        dest.writeString(employeeId);
+        dest.writeString(name);
+        dest.writeDouble(basicSalary);
+        dest.writeDouble(allowance);
+        dest.writeDouble(tax);
+        dest.writeDouble(insurance);
+        dest.writeString(salary);
+    }
+}

@@ -1,16 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp">
+    <ImageView
+        android:id="@+id/ic_back"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_back"
+        android:contentDescription="Quay lại"
+
+        android:layout_marginEnd="8dp" />
+
+    <!-- Tiêu đề "Thêm Nhân Viên" -->
+
+    <TextView
+        android:id="@+id/txt_title"
+        android:layout_width="392dp"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="Thêm mới lương"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <Spinner
         android:id="@+id/spinnerEmployee"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:hint="Chọn Nhân Viên"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        tools:ignore="ExtraText" />
 
     <EditText
         android:id="@+id/edtBasicSalary"
