@@ -2,13 +2,17 @@ package com.example.quanlynhansu.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.quanlynhansu.Adapter.EmployeeAdapter;
 import com.example.quanlynhansu.Items.Employees;
 import com.example.quanlynhansu.R;
@@ -19,8 +23,10 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import androidx.annotation.NonNull;
 
 public class EmployeesActivity extends AppCompatActivity {
@@ -48,7 +54,7 @@ public class EmployeesActivity extends AppCompatActivity {
             @Override
             public void onEditClick(int position) {
                 Intent intent = new Intent(EmployeesActivity.this, EditEmployeeActivity.class);
-                intent.putExtra("employee_id", employeeKeys.get(position));
+                intent.putExtra("employeeId", employeeKeys.get(position)); // Sử dụng "employeeId"
                 startActivity(intent);
             }
 
@@ -61,7 +67,7 @@ public class EmployeesActivity extends AppCompatActivity {
             public void onEvaluateClick(int position) {
                 // Xử lý sự kiện đánh giá ở đây
                 Intent intent = new Intent(EmployeesActivity.this, EvaluateActivity.class);
-                intent.putExtra("employee_id", employeeKeys.get(position));
+                intent.putExtra("employeeId", employeeKeys.get(position)); // Sử dụng "employeeId"
                 startActivity(intent);
             }
         });
@@ -81,6 +87,7 @@ public class EmployeesActivity extends AppCompatActivity {
                     if (employee != null) {
                         employeeList.add(employee);
                         employeeKeys.add(snapshot.getKey());
+                        Log.d("EmployeesActivity", "Employee ID: " + snapshot.getKey()); // In ra ID nhân viên
                     }
                 }
                 adapter.notifyDataSetChanged();
@@ -89,6 +96,7 @@ public class EmployeesActivity extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 // Xử lý lỗi nếu có
+                Log.e("EmployeesActivity", "Database error: " + databaseError.getMessage());
             }
         });
 
@@ -120,10 +128,10 @@ public class EmployeesActivity extends AppCompatActivity {
     private void deleteEmployee(String employeeKey) {
         databaseReference.child(employeeKey).removeValue()
                 .addOnSuccessListener(aVoid -> {
-                    // Xóa nhân viên thành công
+                    Toast.makeText(EmployeesActivity.this, "Xóa nhân viên thành công!", Toast.LENGTH_SHORT).show();
                 })
                 .addOnFailureListener(e -> {
-                    // Không thể xóa nhân viên
+                    Toast.makeText(EmployeesActivity.this, "Không thể xóa nhân viên!", Toast.LENGTH_SHORT).show();
                 });
     }
 }
