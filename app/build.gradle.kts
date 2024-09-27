@@ -40,6 +40,10 @@ dependencies {
     implementation(libs.constraintlayout)
     implementation(libs.firebase.database)
 
+    // Thêm Firebase Storage và cập nhật BOM Firebase
+    implementation(platform("com.google.firebase:firebase-bom:32.0.0")) // Cập nhật BOM Firebase
+    implementation("com.google.firebase:firebase-storage-ktx")  // Thêm Firebase Storage
+
     // Thêm Glide
     implementation(libs.glide)
     implementation(libs.litert.metadata) // Thư viện Glide
