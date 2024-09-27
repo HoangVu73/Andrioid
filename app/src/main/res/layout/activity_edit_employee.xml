@@ -22,31 +22,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sửa Thông Tin Nhân Viên"
-        android:textSize="18sp"
+        android:textSize="22sp"
         android:textStyle="bold"
+        android:layout_marginStart="8dp"
         app:layout_constraintStart_toEndOf="@id/ic_back"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/ic_back"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintVertical_bias="0" />
-
-    <!-- Employee ID Input -->
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/input_employee_id"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_title">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_employee_id"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Mã nhân viên"
-            android:inputType="text" />
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintBottom_toBottomOf="@id/ic_back" />
 
     <!-- First Name Input -->
     <com.google.android.material.textfield.TextInputLayout
@@ -56,14 +37,15 @@
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/input_employee_id">
+        app:layout_constraintTop_toBottomOf="@id/ic_back">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_first_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Họ"
-            android:inputType="text" />
+            android:inputType="text"
+            android:padding="12dp"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Last Name Input -->
@@ -81,7 +63,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Tên"
-            android:inputType="text" />
+            android:inputType="text"
+            android:padding="12dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Hire Date Input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_hire_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/input_last_name">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_hire_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ngày Tuyển Dụng"
+            android:inputType="date"
+            android:padding="12dp"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Department Selection Button -->
@@ -95,7 +97,8 @@
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/input_last_name" />
+        app:layout_constraintTop_toBottomOf="@id/input_hire_date"
+        android:padding="12dp"/>
 
     <!-- Position Selection Button -->
     <Button
@@ -108,34 +111,21 @@
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_select_department" />
+        app:layout_constraintTop_toBottomOf="@id/btn_select_department"
+        android:padding="12dp"/>
 
-    <!-- Hire Date Selection Button -->
-    <Button
-        android:id="@+id/btn_hire_date"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Chọn Ngày Tuyển Dụng"
-        android:backgroundTint="@color/colorPrimary"
-        android:textColor="@android:color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_select_position" />
-
-    <!-- Image Preview -->
-
-    <!-- Image Selection Button -->
-
-    <!-- Save Button -->
+    <!-- Save Employee Button -->
     <Button
         android:id="@+id/btn_save_employee"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Lưu Thông Tin"
         android:backgroundTint="@color/colorPrimary"
-        android:text="Lưu"
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_hire_date" />
+        app:layout_constraintTop_toBottomOf="@id/btn_select_position"
+        android:padding="12dp"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

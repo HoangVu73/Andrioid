@@ -13,4 +13,8 @@
     <color name="red">#FF0000</color>
     <color name="blue">#0000ff</color>
     <color name="colorBackground">#FAFAFA</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="orange">#FFA500</color>
+    <color name="teal_700">#FF018786</color>
 </resources>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- TextView hiển thị tên nhân viên -->
+    <TextView
+        android:id="@+id/txt_employee_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tên Nhân Viên"
+        android:textSize="18sp"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- EditText để nhập đánh giá -->
+    <EditText
+        android:id="@+id/edt_evaluation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập đánh giá"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- EditText để nhập số điểm -->
+    <EditText
+        android:id="@+id/edt_score"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập số điểm"
+        android:inputType="number"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Nút để thêm đánh giá -->
+    <Button
+        android:id="@+id/btn_add_evaluation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thêm Đánh Giá"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- RecyclerView để hiển thị các đánh giá -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewEvaluations"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"/>
+</LinearLayout>

@@ -1,54 +1,42 @@
 package com.example.quanlynhansu.Items;
 
 public class EmployeeEvaluations {
-    private String employeeID;
-    private String evaluationDate;
-    private int rating;
-    private String comments;
 
-    public EmployeeEvaluations() { }
+    private String evaluationId;
+    private String employeeId;
+    private String evaluationText;
+    private int score;
+    private String date;
 
-    public EmployeeEvaluations(String employeeID, String evaluationDate, int rating, String comments) {
-        this.employeeID = employeeID;
-        this.evaluationDate = evaluationDate;
-        this.rating = rating;
-        this.comments = comments;
+    public EmployeeEvaluations() {
+        // Firebase yêu cầu constructor mặc định
     }
 
-    // Getters and setters
-    public String getEmployeeID() {
-        return employeeID;
+    public EmployeeEvaluations(String evaluationId, String employeeId, String evaluationText, int score, String date) {
+        this.evaluationId = evaluationId;
+        this.employeeId = employeeId;
+        this.evaluationText = evaluationText;
+        this.score = score;
+        this.date = date;
     }
 
-    public void setEmployeeID(String employeeID) {
-        this.employeeID = employeeID;
+    public String getEvaluationId() {
+        return evaluationId;
     }
 
-    public String getEvaluationDate() {
-        return evaluationDate;
+    public String getEmployeeId() {
+        return employeeId;
     }
 
-    public void setEvaluationDate(String evaluationDate) {
-        this.evaluationDate = evaluationDate;
+    public String getEvaluationText() {
+        return evaluationText;
     }
 
-    public int getRating() {
-        return rating;
+    public int getScore() {
+        return score;
     }
 
-    public void setRating(int rating) {
-        this.rating = rating;
-    }
-
-    public String getComments() {
-        return comments;
-    }
-
-    public void setComments(String comments) {
-        this.comments = comments;
-    }
-
-    public String getEmployeeName() {
-        return EmployeesManager.getEmployeeName(employeeID);
+    public String getDate() {
+        return date;
     }
 }
