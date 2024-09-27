@@ -101,7 +101,10 @@
             android:name=".crud.EditSalaryActivity"
             android:exported="true" />
 
+        <!-- Khai báo EvaluateActivity -->
+        <activity
+            android:name=".Activity.EvaluateActivity"
+            android:exported="true" />
 
     </application>
-
 </manifest>

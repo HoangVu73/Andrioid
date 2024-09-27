@@ -33,17 +33,18 @@ public class MainActivity extends AppCompatActivity {
             String username = usernameEditText.getText().toString().trim();
             String password = passwordEditText.getText().toString().trim();
 
+            // Kiểm tra thông tin đăng nhập
             if (username.isEmpty() || password.isEmpty()) {
                 Toast.makeText(MainActivity.this, "Vui lòng điền tất cả các trường", Toast.LENGTH_SHORT).show();
-            } else {
-                // Xử lý đăng nhập ở đây
-
+            } else if (username.equals("admin") && password.equals("123456")) {
                 // Chuyển đến HomeActivity khi đăng nhập thành công
                 Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                 startActivity(intent);
 
                 // Kết thúc MainActivity để không quay lại trang đăng nhập
                 finish();
+            } else {
+                Toast.makeText(MainActivity.this, "Thông tin đăng nhập không chính xác", Toast.LENGTH_SHORT).show();
             }
         });
 

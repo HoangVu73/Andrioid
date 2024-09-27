@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <!-- TextView cho nội dung đánh giá -->
+    <TextView
+        android:id="@+id/txt_evaluation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đánh giá:"
+        android:textSize="16sp"
+        android:layout_marginBottom="4dp"/>
+
+    <!-- TextView cho số điểm -->
+    <TextView
+        android:id="@+id/txt_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Số Điểm:"
+        android:textSize="16sp"
+        android:layout_marginBottom="4dp"/>
+
+    <!-- TextView cho ngày -->
+    <TextView
+        android:id="@+id/txt_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ngày:"
+        android:textSize="14sp"
+        android:layout_marginBottom="4dp"/>
+</LinearLayout>
